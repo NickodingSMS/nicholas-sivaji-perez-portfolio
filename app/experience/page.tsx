@@ -63,7 +63,13 @@ export default function Experience() {
           ) : (
             <div>
               {catImage ? (
-                <Image src={catImage} alt="Random Cat" className="w-full max-w-xs rounded-lg shadow-lg mx-auto" />
+                <Image
+                src={catImage}
+                alt="Random Cat"
+                width={400} // Adjust width as needed
+                height={400} // Adjust height as needed
+                className="w-full max-w-xs rounded-lg shadow-lg mx-auto"
+              />
               ) : (
                 <p className="text-lg text-gray-400 mb-4">No cat image available</p>
               )}
