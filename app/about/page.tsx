@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const About = () => {
   return (
@@ -8,7 +9,7 @@ const About = () => {
       <section className="flex flex-col items-center mb-12 text-center">
         {/* Circular Profile Image */}
         <div className="relative mb-6 w-24 h-24 sm:w-40 sm:h-40 md:w-32 md:h-32 z-0 ">
-  <img 
+  <Image
     src="/portrait.jpg" 
     alt="Nicholas Sivaji Perez" 
     className="w-full h-full rounded-full object-cover z-0" 
@@ -48,7 +49,7 @@ const About = () => {
       {/* About My Family Section */}
       <section className="flex flex-col items-center lg:flex-row lg:items-start">
         <div className="relative w-72 h-72 mb-4 lg:mb-0 lg:mr-8">
-          <img 
+          <Image
             src="/familypicture.jfif" 
             alt="Family Picture" 
             className="w-full h-full object-cover"

@@ -1,4 +1,5 @@
 'use client';
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Experience() {
@@ -62,7 +63,7 @@ export default function Experience() {
           ) : (
             <div>
               {catImage ? (
-                <img src={catImage} alt="Random Cat" className="w-full max-w-xs rounded-lg shadow-lg mx-auto" />
+                <Image src={catImage} alt="Random Cat" className="w-full max-w-xs rounded-lg shadow-lg mx-auto" />
               ) : (
                 <p className="text-lg text-gray-400 mb-4">No cat image available</p>
               )}

@@ -1,4 +1,5 @@
 "use client";
+import Image from 'next/image';
 import React, { useState, useEffect, useRef } from 'react';
 
 const certifications = [ 
@@ -55,7 +56,7 @@ const Certifications = () => {
             className="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition"
             onClick={() => handleOpenModal(cert)}
           >
-            <img src={cert.image} alt={cert.title} className="w-full h-auto rounded-lg" />
+            <Image src={cert.image} alt={cert.title} className="w-full h-auto rounded-lg" />
             <h2 className="mt-2 text-xl font-semibold text-gray-100">{cert.title}</h2>
           </div>
         ))}
@@ -79,7 +80,7 @@ const Certifications = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
             </button>
-            <img src={selectedCert.image} alt="Certificate" className="w-full h-auto mb-4 rounded-lg" />
+            <Image src={selectedCert.image} alt="Certificate" className="w-full h-auto mb-4 rounded-lg" />
             <a
               href={selectedCert.downloadLink}
               download
