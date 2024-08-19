@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+
 import Image from 'next/image';
 
 const About = () => {
@@ -11,8 +11,10 @@ const About = () => {
         <div className="relative mb-6 w-24 h-24 sm:w-40 sm:h-40 md:w-32 md:h-32 z-0 ">
   <Image
     src="/portrait.jpg" 
+    width={400} // Adjust width as needed
+                height={400} // Adjust height as needed
     alt="Nicholas Sivaji Perez" 
-    className="w-full h-full rounded-full object-cover z-0" 
+    className="w-full h-full rounded-full object-cover " 
   />
 </div>
 
@@ -52,6 +54,8 @@ const About = () => {
           <Image
             src="/familypicture.jfif" 
             alt="Family Picture" 
+            width={400} // Adjust width as needed
+                height={400} // Adjust height as needed
             className="w-full h-full object-cover"
           />
         </div>
