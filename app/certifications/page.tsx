@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import React, { useState, useEffect, useRef } from 'react';
-
+import MatrixRain from '../MatrixRain';
 const certifications = [ 
   {
     id: 1,
@@ -47,7 +47,9 @@ const Certifications = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center p-6 bg-gray-900 min-h-screen text-gray-300 mt-12">
+    
+    <div className="relative z-10 flex flex-col items-center p-6 bg-gray-900 min-h-screen text-gray-300 mt-12">
+     
       <h1 className="text-4xl font-bold mb-8 text-gray-100">Certifications</h1>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {certifications.map(cert => (
@@ -56,7 +58,11 @@ const Certifications = () => {
             className="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition"
             onClick={() => handleOpenModal(cert)}
           >
-            <Image src={cert.image} alt={cert.title} className="w-full h-auto rounded-lg" />
+            <Image src={cert.image} 
+            alt={cert.title} 
+            className="w-full h-auto rounded-lg" 
+            width={400}
+            height={500}/>
             <h2 className="mt-2 text-xl font-semibold text-gray-100">{cert.title}</h2>
           </div>
         ))}

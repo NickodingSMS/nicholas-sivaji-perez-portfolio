@@ -1,7 +1,7 @@
 'use client';
 import Image from "next/image";
 import { useState, useEffect } from "react";
-
+import MatrixRain from '../MatrixRain';
 export default function Experience() {
   const [catImage, setCatImage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -24,7 +24,9 @@ export default function Experience() {
   };
 
   return (
-    <div className="p-6 bg-gray-900 min-h-screen">
+    <div className="relative min-h-screen bg-gray-900 overflow-hidden">
+    <MatrixRain />
+    <div className="relative z-10 p-6">
     <h1 className="text-3xl font-bold mb-8 text-center mt-12 text-gray-200">Experience</h1>
 
     <div className="bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
@@ -100,6 +102,7 @@ export default function Experience() {
           </p>
         </div>
       </div>
+    </div>
     </div>
   );
 }

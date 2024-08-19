@@ -1,9 +1,13 @@
+"use client";
 import Link from 'next/link';
+import MatrixRain from '../app/MatrixRain';
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-6 bg-gradient-to-br from-gray-800 to-gray-900">
-      <div className="text-center mb-12">
+    <main className="relative flex min-h-screen flex-col items-center justify-center p-6 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
+      <MatrixRain />
+
+      <div className="text-center mb-12 relative z-10">
         <h1 className="text-5xl lg:text-6xl font-extrabold mb-4 text-gray-100 tracking-tight mt-12">
           Nicholas Sivaji Perez
         </h1>
@@ -12,7 +16,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="w-full max-w-4xl grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="w-full max-w-4xl grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 relative z-10">
         <Link href="/experience" className="group relative bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-0 group-hover:opacity-25 rounded-lg transition"></div>
           <h2 className="relative text-xl font-semibold mb-2 text-gray-100 group-hover:text-white transition">
@@ -55,4 +59,6 @@ export default function Home() {
       </div>
     </main>
   );
-}
+};
+
+export default Home;

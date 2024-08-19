@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -17,6 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      
       <body className={`${inter.className} min-h-screen bg-gray-900 text-gray-200`}>
         <TopBar />
         <main className="">{children}</main>

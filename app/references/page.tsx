@@ -1,5 +1,6 @@
+"use client";
 import React from 'react';
-
+import MatrixRain from '../MatrixRain';
 const references = [
   {
     id: 1,
@@ -23,7 +24,9 @@ const references = [
 
 const References = () => {
   return (
-    <div className="flex flex-col items-center p-6 bg-gray-100 min-h-screen">
+    
+    <div className="flex flex-col items-center p-6 bg-gray-600 min-h-screen">
+      <MatrixRain />
       <h1 className="text-3xl font-bold mb-6">References</h1>
       <div className="w-full max-w-2xl">
         <div className="bg-white p-6 rounded-lg shadow-md mb-6">
