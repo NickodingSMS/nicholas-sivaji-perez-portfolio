@@ -40,7 +40,7 @@ export default function Experience() {
           <li>Applied Agile principles, including SCRUM and Kanban, to manage and deliver high-priority projects on time, with a focus on continuous improvement and iterative development.</li>
           <li>Implemented CI/CD pipelines using Git, Jenkins, and Docker, automating testing and deployment processes to ensure consistent delivery of high-quality code.</li>
           <li>Performed comprehensive code reviews and pair programming sessions, promoting best practices in coding standards, design patterns, and software architecture.</li>
-          <li>Utilized modern JavaScript libraries such as Axios for HTTP requests and Redux for state management, enhancing the application's data flow and user experience.</li>
+          <li>Utilized modern JavaScript libraries such as Axios for HTTP requests and Redux for state management, enhancing the application&apos;s data flow and user experience.</li>
           <li>Integrated third-party services and APIs, including Firebase, AWS S3, and Google Maps API, expanding the functionality and reach of web applications.</li>
           <li>Documented technical processes, system designs, and codebases in Confluence and GitHub Wikis, fostering knowledge sharing and collaboration across teams.</li>
           <li>Managed and optimized SQL and NoSQL databases, including MySQL and MongoDB, ensuring high performance and data integrity in large-scale applications.</li>
@@ -84,7 +84,7 @@ export default function Experience() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39785.82778190831!2d-122.10466938567195!3d37.38605153100595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5e0da40ae73%3A0x1b5f6f0c6164a6db!2sSilicon%20Valley!5e0!3m2!1sen!2sus!4v1692900000000!5m2!1sen!2sus"
               className="w-full h-full border-0 rounded-lg"
               allowFullScreen=""
-              loading="lazy"
+              loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
               title="Silicon Valley Map"
             ></iframe>
