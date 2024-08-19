@@ -4,15 +4,15 @@ import Image from 'next/image';
 
 const About = () => {
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-800 p-6">
+    <div className="flex flex-col items-center min-h-screen mt-12 bg-gray-800 p-6">
       {/* About Me Section */}
       <section className="flex flex-col items-center mb-12 text-center">
         {/* Circular Profile Image */}
-        <div className="relative mb-6 w-24 h-24 sm:w-40 sm:h-40 md:w-32 md:h-32 z-0 ">
+        <div className="relative mb-6 w-24 h-24 sm:w-40 sm:h-40 md:w-32 md:h-32  ">
   <Image
     src="/portrait.jpg" 
-    width={400} // Adjust width as needed
-                height={400} // Adjust height as needed
+    width={100} // Adjust width as needed
+                height={100} // Adjust height as needed
     alt="Nicholas Sivaji Perez" 
     className="w-full h-full rounded-full object-cover " 
   />
