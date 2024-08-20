@@ -4,30 +4,32 @@ import MatrixRain from '../MatrixRain';
 const references = [
   {
     id: 1,
-    name: 'Jane Doe',
-    position: 'Project Manager at Tech Innovations',
-    contact: 'jane.doe@techinnovations.com',
+    name: 'Benjamin Hladycz',
+    position: 'Director Solutions Architect',
+    contact: 'benjaminhladycz@gmail.com',
   },
   {
     id: 2,
-    name: 'John Smith',
-    position: 'Senior Developer at Code Solutions',
-    contact: 'john.smith@codesolutions.com',
+    name: 'Pavneet Ajmani',
+    position: 'Business Analyst and Configurations',
+    contact: 'pavneetajmani@gmail.com',
   },
   {
     id: 3,
-    name: 'Emily Johnson',
-    position: 'HR Specialist at FutureTech',
-    contact: 'emily.johnson@futuretech.com',
+    name: 'Gerrardo Barrera',
+    position: 'Senior Software Developer',
+    contact: 'gerardobarrera714@gmail.com',
   },
 ];
 
 const References = () => {
   return (
-    
-    <div className="flex flex-col items-center p-6 bg-gray-600 min-h-screen">
-      <MatrixRain />
-      <h1 className="text-3xl font-bold mb-6">References</h1>
+    <div className="relative min-h-screen bg-gray-900 overflow-hidden">
+    <MatrixRain />
+    <div className="relative z-10 flex flex-col items-center p-6 text-gray-800 mt-12">
+   
+     
+      <h1 className="text-3xl font-bold mb-6 text-white">References</h1>
       <div className="w-full max-w-2xl">
         <div className="bg-white p-6 rounded-lg shadow-md mb-6">
           <h2 className="text-xl font-semibold mb-4">References List</h2>
@@ -48,6 +50,7 @@ const References = () => {
           </p>
         </div>
       </div>
+    </div>
     </div>
   );
 };

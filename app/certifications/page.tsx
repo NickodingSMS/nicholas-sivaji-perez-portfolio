@@ -47,9 +47,9 @@ const Certifications = () => {
   }, []);
 
   return (
-    
-    <div className="relative z-10 flex flex-col items-center p-6 bg-gray-900 min-h-screen text-gray-300 mt-12">
-     
+    <div className="relative min-h-screen bg-gray-900 overflow-hidden">
+      <MatrixRain />
+      <div className="relative z-10 flex flex-col items-center p-6 text-gray-300 mt-12">
       <h1 className="text-4xl font-bold mb-8 text-gray-100">Certifications</h1>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {certifications.map(cert => (
@@ -86,7 +86,11 @@ const Certifications = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
             </button>
-            <Image src={selectedCert.image} alt="Certificate" className="w-full h-auto mb-4 rounded-lg" />
+            <Image src={selectedCert.image} 
+            alt="Certificate" 
+            width={500}
+            height={500}
+            className="w-full h-auto mb-4 rounded-lg" />
             <a
               href={selectedCert.downloadLink}
               download
@@ -97,6 +101,7 @@ const Certifications = () => {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 };
