@@ -12,7 +12,7 @@ const Home: React.FC = () => {
           Nicholas Sivaji Perez
         </h1>
         <p className="text-2xl lg:text-3xl font-medium text-gray-400">
-          Developer
+          Software Developer
         </p>
       </div>
 
