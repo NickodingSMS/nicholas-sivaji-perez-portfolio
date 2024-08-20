@@ -17,7 +17,7 @@ const references = [
   {
     id: 3,
     name: 'Gerrardo Barrera',
-    position: 'Senior Software Developer',
+    position: 'Senior Software Engineer',
     contact: 'gerardobarrera714@gmail.com',
   },
 ];
