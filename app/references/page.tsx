@@ -32,7 +32,7 @@ const References = () => {
       <h1 className="text-3xl font-bold mb-6 text-white">References</h1>
       <div className="w-full max-w-2xl">
         <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-          <h2 className="text-xl font-semibold mb-4">References List</h2>
+          <h2 className="text-xl font-semibold mb-4 text-center">Past Co-Workers</h2>
           <ul className="space-y-4">
             {references.map(ref => (
               <li key={ref.id} className="border-b pb-4">
@@ -44,7 +44,7 @@ const References = () => {
           </ul>
         </div>
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold mb-4">Superiors</h2>
+          <h2 className="text-xl font-semibold mb-4 text-center">Superiors</h2>
           <p className="text-gray-700">
             For contact information of my superiors, please reach out to me directly.
           </p>
