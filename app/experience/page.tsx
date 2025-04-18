@@ -98,7 +98,7 @@ export default function Experience() {
             ></iframe>
           </div>
           <p className="text-sm text-gray-400 text-center">
-            Silicon Valley on a Google map API.
+            Silicon Valley on a Google map API
           </p>
         </div>
       </div>
