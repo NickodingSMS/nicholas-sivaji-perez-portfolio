@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import React, { useState, useEffect, useRef } from 'react';
 import MatrixRain from '../MatrixRain';
-const certifications = [ 
+const certifications = [
   {
     id: 1,
     title: 'Mendix Rapid Certification',
@@ -24,7 +24,7 @@ const certifications = [
   {
     id: 4,
     title: 'Mendix Advanced Certification',
-    image: '/Advanced.jpg',
+    image: '/Advanced.JPG',
     downloadLink: '/Advanced.pdf',
   },
 ];
@@ -47,7 +47,6 @@ const Certifications = () => {
         handleCloseModal();
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
@@ -56,58 +55,64 @@ const Certifications = () => {
     <div className="relative min-h-screen bg-gray-900 overflow-hidden">
       <MatrixRain />
       <div className="relative z-10 flex flex-col items-center p-6 text-gray-300 mt-12">
-      <h1 className="text-4xl font-bold mb-8 text-gray-100">Certifications</h1>
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {certifications.map(cert => (
-          <div
-            key={cert.id}
-            className="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition"
-            onClick={() => handleOpenModal(cert)}
-          >
-            <Image src={cert.image} 
-            alt={cert.title} 
-            className="w-full h-auto rounded-lg" 
-            width={400}
-            height={500}/>
-            <h2 className="mt-2 text-xl font-semibold text-gray-100">{cert.title}</h2>
-          </div>
-        ))}
-      </div>
+        <h1 className="text-4xl font-bold mb-8 text-white text-center">Certifications</h1>
 
-      {/* Modal */}
-      {selectedCert && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
-          <div ref={modalRef} className="bg-gray-800 p-6 rounded-lg max-w-3xl w-full relative">
-            <button
-              className="absolute top-4 right-4 text-red-500 hover:text-red-700"
-              onClick={handleCloseModal}
+        <div className={`grid gap-6 w-full max-w-6xl
+          grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+          ${certifications.length % 3 === 1 ? 'justify-center lg:grid-cols-[repeat(auto-fill,minmax(300px,1fr))]' : ''}`}>
+          {certifications.map(cert => (
+            <div
+              key={cert.id}
+              className="cursor-pointer bg-gray-800/90 p-4 rounded-lg shadow-lg hover:shadow-xl transition"
+              onClick={() => handleOpenModal(cert)}
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-            </button>
-            <Image src={selectedCert.image} 
-            alt="Certificate" 
-            width={500}
-            height={500}
-            className="w-full h-auto mb-4 rounded-lg" />
-            <a
-              href={selectedCert.downloadLink}
-              download
-              className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-            >
-              Download Certificate
-            </a>
-          </div>
+              <Image
+                src={cert.image}
+                alt={cert.title}
+                className="w-full h-auto rounded-lg"
+                width={400}
+                height={500}
+              />
+              <h2 className="mt-2 text-xl font-semibold text-white text-center">{cert.title}</h2>
+            </div>
+          ))}
         </div>
-      )}
-    </div>
+
+        {selectedCert && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
+            <div ref={modalRef} className="bg-gray-800 p-6 rounded-lg max-w-3xl w-full relative">
+              <button
+                className="absolute top-4 right-4 text-red-500 hover:text-red-700"
+                onClick={handleCloseModal}
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+              <Image
+                src={selectedCert.image}
+                alt="Certificate"
+                width={500}
+                height={500}
+                className="w-full h-auto mb-4 rounded-lg"
+              />
+              <a
+                href={selectedCert.downloadLink}
+                download
+                className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+              >
+                Download Certificate
+              </a>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
