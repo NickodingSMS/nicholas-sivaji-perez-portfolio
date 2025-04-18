@@ -51,30 +51,20 @@ Currently, I am exploring new opportunities as my previous role was contract-bas
         </section>
 
         <section className="bg-gray-800/90 p-6 rounded-lg shadow-lg w-full max-w-4xl">
-          <div className="flex flex-col lg:flex-row items-center lg:items-start">
-            <div className="relative w-72 h-auto mb-4 lg:mb-0 lg:mr-8 flex-shrink-0">
-              <Image
-                src="/familypicture.jfif" 
-                alt="Family Picture" 
-                width={400}
-                height={400}
-                className="object-cover rounded-lg"
-              />
-            </div>
-            <div>
-              <h2 className="text-4xl font-bold mb-4 text-white">About My Family</h2>
-              <p className="text-xl text-gray-300">
-              My passion for my work is deeply rooted in the love I have for my family. They are my inspiration and the reason I strive to excel in everything I do. My wife is a beautiful and loving person who supports me in all my endeavors. Her unwavering belief in me fuels my drive to succeed, and I am incredibly grateful for her presence in my life.
+  <div className="flex flex-col items-center">
+    <h2 className="text-4xl font-bold mb-4 text-white text-center">About My Family</h2>
+    <p className="text-xl text-gray-300 text-center max-w-3xl">
+      My passion for my work is deeply rooted in the love I have for my family. They are my inspiration and the reason I strive to excel in everything I do. My wife is a beautiful and loving person who supports me in all my endeavors. Her unwavering belief in me fuels my drive to succeed, and I am incredibly grateful for her presence in my life.
+      <br /><br />
+      Our daughter, a gentle and happy little baby, brings immense joy to our home. Her laughter and curiosity remind me daily of the importance of creating a secure and nurturing environment. With another baby on the way, my heart is filled with even more love and determination to provide for and protect my growing family.
+      <br /><br />
+      Remote work is essential to me because it allows me to work from the comfort of my home while being present for my wife and daughter. I prioritize my family above all else, and having the flexibility to be there for them whenever they need me is invaluable. My work is not just a career—it&apos;s a means to ensure that my loved ones have everything they need to thrive.
+      <br /><br />
+      I am deeply committed to providing for my family and creating a future where they feel safe, loved, and supported. Their happiness and well-being are my top priorities, and I approach my work with the same dedication and passion that I bring to caring for them.
+    </p>
+  </div>
+</section>
 
-Our daughter, a gentle and happy little baby, brings immense joy to our home. Her laughter and curiosity remind me daily of the importance of creating a secure and nurturing environment. With another baby on the way, my heart is filled with even more love and determination to provide for and protect my growing family.
-
-Remote work is essential to me because it allows me to work from the comfort of my home while being present for my wife and daughter. I prioritize my family above all else, and having the flexibility to be there for them whenever they need me is invaluable. My work is not just a career—it&apos;s a means to ensure that my loved ones have everything they need to thrive.
-
-I am deeply committed to providing for my family and creating a future where they feel safe, loved, and supported. Their happiness and well-being are my top priorities, and I approach my work with the same dedication and passion that I bring to caring for them.
-              </p>
-            </div>
-          </div>
-        </section>
       </div>
     </div>
   );

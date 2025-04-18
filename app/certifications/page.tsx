@@ -21,6 +21,12 @@ const certifications = [
     image: '/Lowcode.jpg',
     downloadLink: '/Lowcode.pdf',
   },
+  {
+    id: 4,
+    title: 'Mendix Advanced Certification',
+    image: '/Advanced.jpg',
+    downloadLink: '/Advanced.pdf',
+  },
 ];
 
 const Certifications = () => {
