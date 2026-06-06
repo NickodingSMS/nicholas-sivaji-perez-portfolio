@@ -1,58 +1,63 @@
-"use client";
-import React from 'react';
+'use client';
 import MatrixRain from '../MatrixRain';
-const references = [
-  {
-    id: 1,
-    name: 'Benjamin Hladycz',
-    position: 'Director Solutions Architect',
-    contact: 'benjaminhladycz@gmail.com',
-  },
-  {
-    id: 2,
-    name: 'Pavneet Ajmani',
-    position: 'Business Analyst and Configurations',
-    contact: 'pavneetajmani@gmail.com',
-  },
-  {
-    id: 3,
-    name: 'Gerrardo Barrera',
-    position: 'Senior Software Engineer',
-    contact: 'gerardobarrera714@gmail.com',
-  },
+
+const refs: { name: string; role: string; email: string; phone?: string; relation: string; color: string }[] = [
+  { name: 'Benjamin Hladycz', role: 'Director, Solutions Architect', email: 'benjaminhladycz@gmail.com', relation: 'Manager · Solutions Made Simple', color: '#00aaff' },
+  { name: 'Pavneet Ajmani', role: 'Business Analyst & Configurations', email: 'pavneetajmani@gmail.com', relation: 'Colleague · S4-Digital', color: '#ffb000' },
+  { name: 'Gerrardo Barrera', role: 'Senior Software Engineer', email: 'gerardobarrera714@gmail.com', relation: 'Mentor · California — taught me real-world code fundamentals', color: '#00ff41' },
+  { name: 'Teddy Blanchard', role: 'CTO, Megavue LLC', email: 'tabenterprise@gmail.com', phone: '(504) 909-1648', relation: 'Client · Hired me for Mendix work on LarpWorks — ongoing relationship', color: '#ff69b4' },
 ];
 
-const References = () => {
+export default function References() {
   return (
-    <div className="relative min-h-screen bg-gray-900 overflow-hidden">
-    <MatrixRain />
-    <div className="relative z-10 flex flex-col items-center p-6 text-gray-800 mt-12">
-   
-     
-      <h1 className="text-3xl font-bold mb-6 text-white">References</h1>
-      <div className="w-full max-w-2xl">
-        <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-          <h2 className="text-xl font-semibold mb-4 text-center">Past Co-Workers</h2>
-          <ul className="space-y-4">
-            {references.map(ref => (
-              <li key={ref.id} className="border-b pb-4">
-                <h3 className="text-lg font-semibold">{ref.name}</h3>
-                <p className="text-gray-700">{ref.position}</p>
-                <p className="text-blue-500">{ref.contact}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold mb-4 text-center">Superiors</h2>
-          <p className="text-gray-700">
-            For contact information of my superiors, please reach out to me directly.
-          </p>
+    <div style={{ position: 'relative', minHeight: '100vh', paddingTop: '90px', paddingBottom: '40px' }}>
+      <MatrixRain opacity={0.08} />
+      <div style={{ position: 'relative', zIndex: 10, maxWidth: '860px', margin: '0 auto', padding: '20px 20px 60px' }}>
+        <div style={{ marginBottom: '8px', fontSize: '11px', color: '#00cc33' }}>nicholas@sivaji-perez:~$ cat references.txt</div>
+        <div style={{ marginBottom: '24px', fontSize: '11px', color: '#00cc33' }}># professional references — contact directly or ask me for more</div>
+
+        {refs.map((ref, i) => (
+          <div key={i} className="term-window" style={{ marginBottom: '12px' }}>
+            <div className="term-titlebar" style={{ borderLeft: `2px solid ${ref.color}` }}>
+              <span className="term-dot term-dot-red" />
+              <span className="term-dot term-dot-yellow" />
+              <span className="term-dot term-dot-green" />
+              <span style={{ marginLeft: 8, color: '#00dd44' }}>{ref.name.toLowerCase().replace(/ /g, '_')}.contact</span>
+            </div>
+            <div className="term-body">
+              <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '8px 24px' }}>
+                {[['NAME', ref.name], ['ROLE', ref.role], ['RELATION', ref.relation], ['EMAIL', ref.email], ...(ref.phone ? [['PHONE', ref.phone]] : [])].map(([k, v]) => (
+                  <div key={k} style={{ display: 'contents' }}>
+                    <span style={{ color: '#00aa33', fontSize: '11px', letterSpacing: '0.05em', alignSelf: 'center' }}>{k}</span>
+                    <span style={{ fontSize: '13px', color: k === 'EMAIL' && v !== 'available on request' ? '#00aaff' : '#00dd44' }}>
+                      {k === 'EMAIL' && v !== 'available on request'
+                        ? <a href={`mailto:${v}`} style={{ color: '#00aaff', textDecoration: 'none' }}>{v}</a>
+                        : v}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+
+        <div className="term-window">
+          <div className="term-titlebar">
+            <span className="term-dot term-dot-red" />
+            <span className="term-dot term-dot-yellow" />
+            <span className="term-dot term-dot-green" />
+            <span style={{ marginLeft: 8, color: '#00dd44' }}>superiors.txt</span>
+          </div>
+          <div className="term-body">
+            <div style={{ fontSize: '13px', color: '#00dd44', marginBottom: '8px' }}>
+              Contact info for direct managers and clients available on request.
+            </div>
+            <a href="mailto:nicholassivaji@gmail.com" style={{ fontSize: '12px', color: '#00aaff', textDecoration: 'none' }}>
+              → nicholassivaji@gmail.com
+            </a>
+          </div>
         </div>
       </div>
     </div>
-    </div>
   );
-};
-
-export default References;
+}

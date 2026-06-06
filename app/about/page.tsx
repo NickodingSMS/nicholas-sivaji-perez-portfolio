@@ -1,92 +1,173 @@
-import React from 'react';
+'use client';
 import MatrixRain from '../MatrixRain';
 import Image from 'next/image';
 
-const About = () => {
+const sections = [
+  {
+    cmd: 'cat personal.md',
+    title: 'personal.md',
+    color: '#00aaff',
+    content: [
+      "Born into curiosity. In 5th grade (2010), I was the kid my teacher called",
+      "when the computer broke. That same year I got GameCube games running on a",
+      "dying laptop using a PS3 controller by spoofing the drivers. Just because",
+      "I wanted to see if I could.",
+      "",
+      "High school: AP Computer Science. Before that: Cheat Engine, emulators,",
+      "game modding, ROM hacks. I learned what code could do before I knew what",
+      "code was. That itch never went away.",
+      "",
+      "No degree. Didn't need one. Had a computer and time.",
+    ],
+  },
+  {
+    cmd: 'cat career.md',
+    title: 'career.md',
+    color: '#00ff41',
+    content: [
+      "Straight out of high school → S4-Digital internship. HTML/CSS, Mendix",
+      "bootcamp, APIs, jQuery, Git, Jira, Agile. Real work, real clients,",
+      "real deadlines from day one.",
+      "",
+      "Climbed to Solutions Engineer / Architect at SMS. Led front-end,",
+      "designed layouts, owned SCSS, mentored juniors, integrated APIs for",
+      "developers who didn't know how. The go-to front-end person.",
+      "",
+      "Built things at NC State, Megavue, Paradigm. Each one: handed a broken",
+      "system, left it significantly better. Usually fast.",
+      "",
+      "Currently: open to full-time remote roles. I build things that work.",
+    ],
+  },
+  {
+    cmd: 'cat family.md',
+    title: 'family.md',
+    color: '#ffb000',
+    content: [
+      "Wife. Two kids.",
+      "",
+      "Everything I build is for them. Remote work isn't a perk —",
+      "it's how I stay present while building a career that matters.",
+      "",
+      "They're why I don't half-ass anything.",
+    ],
+  },
+];
+
+const skills = [
+  { label: 'CSS / SCSS', level: 96, color: '#00aaff' },
+  { label: 'JavaScript / TS', level: 88, color: '#00ff41' },
+  { label: 'React / Next.js', level: 85, color: '#00ff41' },
+  { label: 'Mendix', level: 94, color: '#ffb000' },
+  { label: 'Express / Node', level: 75, color: '#00ff41' },
+  { label: 'Python', level: 68, color: '#007a1f' },
+  { label: 'SQL / Prisma', level: 72, color: '#007a1f' },
+  { label: 'Linux / CLI', level: 80, color: '#00aaff' },
+];
+
+export default function About() {
   return (
-    <div className="relative min-h-screen bg-gray-900 overflow-hidden">
-      <MatrixRain />
-      <div className="relative z-10 p-6 flex flex-col items-center">
-        <h1 className="text-5xl font-extrabold mb-8 text-center mt-12 text-white">About Me</h1>
+    <div style={{ position: 'relative', minHeight: '100vh', paddingTop: '90px', paddingBottom: '40px' }}>
+      <MatrixRain opacity={0.08} />
+      <div style={{ position: 'relative', zIndex: 10, maxWidth: '860px', margin: '0 auto', padding: '20px 20px 60px' }}>
 
-        {/* About Me Section */}
-        <section className="bg-gray-800/90 p-6 rounded-lg shadow-lg mb-8 w-full max-w-4xl">
-          <div className="flex flex-col items-center">
-            <div className="relative mb-6 w-24 h-24 sm:w-40 sm:h-40 md:w-32 md:h-32">
-              <Image
-                src="/portrait.JPG"
-                width={100}
-                height={100}
-                alt="Nicholas Sivaji Perez"
-                className="rounded-full object-cover w-full h-full"
-              />
+        {/* Header */}
+        <div style={{ marginBottom: '20px', fontSize: '11px', color: '#004d13', letterSpacing: '0.1em' }}>
+          nicholas@sivaji-perez:~$ cat about.md
+        </div>
+
+        {/* Profile card */}
+        <div className="term-window" style={{ marginBottom: '16px' }}>
+          <div className="term-titlebar">
+            <span className="term-dot term-dot-red" />
+            <span className="term-dot term-dot-yellow" />
+            <span className="term-dot term-dot-green" />
+            <span style={{ marginLeft: 8 }}>whoami</span>
+          </div>
+          <div className="term-body" style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+            <div style={{ position: 'relative', flexShrink: 0 }}>
+              <div style={{ width: 100, height: 100, border: '1px solid #1a3a1a', position: 'relative', overflow: 'hidden' }}>
+                <Image src="/portrait.JPG" alt="Nicholas Sivaji Perez" fill style={{ objectFit: 'cover', filter: 'grayscale(30%) contrast(1.1)' }} />
+              </div>
+              <div style={{
+                position: 'absolute', bottom: 0, left: 0, right: 0,
+                background: 'rgba(0,255,65,0.9)', color: '#0a0a0a',
+                fontSize: '9px', textAlign: 'center', padding: '2px', fontWeight: 700
+              }}>ONLINE</div>
             </div>
-            <p className="text-xl text-gray-300 text-center max-w-3xl">
-              From a young age, I&apos;ve been captivated by technology and the limitless possibilities it offers.
-              My journey into the world of coding began with a deep love for old video games and flash browser games,
-              which sparked my curiosity about how things worked behind the scenes.
-              <br /><br />
-              In high school, I formalized my interest by taking coding classes, including AP Computer Science. These
-              classes provided a solid foundation in programming principles and further ignited my passion for
-              software development. However, my journey started much earlier—back in 5th grade, when my teacher would
-              turn to me whenever she encountered computer issues.
-              <br /><br />
-              In that same year, 2010, I challenged myself to push the boundaries of what my very old laptop could do.
-              Through sheer determination, I managed to play GameCube games on it using a PS3 controller by spoofing
-              the drivers. This achievement was more than just a technical feat—it was a testament to my curiosity
-              and drive to overcome limitations.
-              <br /><br />
-              I also explored the world of emulation and game modding, learning how tools like Cheat Engine worked by
-              modifying game memory. These early experiences taught me the power of code and its ability to shape
-              user experiences. Today, that same passion drives me as I continue learning and building in the ever-evolving
-              tech landscape.
-            </p>
+            <div style={{ flex: 1, minWidth: '200px' }}>
+              {[
+                ['NAME', 'Nicholas Sivaji Perez'],
+                ['ROLE', 'Software Engineer / Front End Specialist'],
+                ['LOCATION', 'Gainesville, FL (Remote)'],
+                ['EXPERIENCE', '5+ years'],
+                ['EDUCATION', 'Self-taught + Mendix Certified (Advanced)'],
+                ['STATUS', 'ACTIVELY SEEKING'],
+              ].map(([k, v]) => (
+                <div key={k} style={{ display: 'flex', gap: '12px', marginBottom: '4px', fontSize: '13px' }}>
+                  <span style={{ color: '#004d13', minWidth: 90, fontSize: '11px' }}>{k}</span>
+                  <span style={{ color: k === 'STATUS' ? '#00ff41' : '#00cc33', fontWeight: k === 'STATUS' ? 700 : 400 }}>
+                    {k === 'STATUS' ? '█ ' : ''}{v}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
-        </section>
+        </div>
 
-        {/* About My Work Section */}
-        <section className="bg-gray-800/90 p-6 rounded-lg shadow-lg mb-8 w-full max-w-4xl">
-          <div className="flex flex-col items-center">
-            <h2 className="text-4xl font-bold mb-4 text-white text-center">About My Work</h2>
-            <p className="text-xl text-gray-300 text-center max-w-3xl">
-              After graduating from high school, I landed an internship at S4-Digital, where I was trained in HTML/CSS
-              and enrolled in a low-code Mendix bootcamp. This experience introduced me to APIs, JavaScript, and jQuery.
-              <br /><br />
-              Working in an Agile Scrum environment, I learned key practices like version control with Git and Jira,
-              documentation, and team coordination. I was mentored by senior developers who helped refine my skills as
-              a front-end developer.
-              <br /><br />
-              As I progressed, I was offered a Solutions Engineer/Architect role, where I led front-end development
-              tasks, designed layouts, handled SCSS, and mentored junior developers. I also managed APIs for other developers
-              unfamiliar with Mendix, becoming the go-to front-end specialist.
-              <br /><br />
-              Today, I am exploring new full-time opportunities, as my previous role was contract-based. I’m eager to bring
-              my front-end expertise and passion for clean, scalable UI to a new team working on innovative projects.
-            </p>
+        {/* Skill bars */}
+        <div className="term-window" style={{ marginBottom: '16px' }}>
+          <div className="term-titlebar">
+            <span className="term-dot term-dot-red" />
+            <span className="term-dot term-dot-yellow" />
+            <span className="term-dot term-dot-green" />
+            <span style={{ marginLeft: 8 }}>skills --proficiency</span>
           </div>
-        </section>
+          <div className="term-body">
+            <div style={{ fontSize: '11px', color: '#004d13', marginBottom: '16px' }}># self-assessed, production-verified</div>
+            {skills.map(skill => (
+              <div key={skill.label} style={{ marginBottom: '10px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px', fontSize: '12px' }}>
+                  <span style={{ color: '#00cc33' }}>{skill.label}</span>
+                  <span style={{ color: '#004d13' }}>{skill.level}%</span>
+                </div>
+                <div style={{ height: '4px', background: '#0a2a0a', position: 'relative' }}>
+                  <div style={{
+                    height: '100%', width: `${skill.level}%`,
+                    background: skill.color,
+                    boxShadow: `0 0 6px ${skill.color}`,
+                    transition: 'width 1s ease',
+                  }} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
-        {/* About My Family Section */}
-        <section className="bg-gray-800/90 p-6 rounded-lg shadow-lg w-full max-w-4xl">
-          <div className="flex flex-col items-center">
-            <h2 className="text-4xl font-bold mb-4 text-white text-center">About My Family</h2>
-            <p className="text-xl text-gray-300 text-center max-w-3xl">
-              My passion for my work is deeply rooted in the love I have for my family. They are my inspiration and the
-              reason I strive to excel in everything I do. My wife is a beautiful and loving person who supports me
-              unconditionally, and I’m incredibly grateful for her.
-              <br /><br />
-              Our daughter brings immense joy and curiosity into our lives, and with another baby on the way, I’m even
-              more driven to provide a safe, loving, and stable environment for them.
-              <br /><br />
-              Remote work is essential to me as it allows me to be present with my family while pursuing a fulfilling
-              career. Their happiness and well-being are my top priorities, and I carry that same commitment and
-              dedication into my work every single day.
-            </p>
+        {/* Story sections */}
+        {sections.map((sec, i) => (
+          <div key={i} className="term-window" style={{ marginBottom: '16px' }}>
+            <div className="term-titlebar">
+              <span className="term-dot term-dot-red" />
+              <span className="term-dot term-dot-yellow" />
+              <span className="term-dot term-dot-green" />
+              <span style={{ marginLeft: 8 }}>$ {sec.cmd}</span>
+            </div>
+            <div className="term-body">
+              <div style={{ borderLeft: `2px solid ${sec.color}`, paddingLeft: '16px' }}>
+                {sec.content.map((line, j) => (
+                  <div key={j} style={{
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontSize: '13px',
+                    color: line === '' ? 'transparent' : '#007a1f',
+                    minHeight: '20px', lineHeight: '1.8',
+                  }}>{line || '​'}</div>
+                ))}
+              </div>
+            </div>
           </div>
-        </section>
+        ))}
       </div>
     </div>
   );
-};
-
-export default About;
+}

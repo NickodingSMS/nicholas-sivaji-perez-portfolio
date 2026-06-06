@@ -1,120 +1,72 @@
-"use client";
+'use client';
 import Image from 'next/image';
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import MatrixRain from '../MatrixRain';
-const certifications = [
-  {
-    id: 1,
-    title: 'Mendix Rapid Certification',
-    image: '/Rapid.jpg',
-    downloadLink: '/Rapid.pdf',
-  },
-  {
-    id: 2,
-    title: 'Mendix Intermediate Certification',
-    image: '/Intermediate.jpg',
-    downloadLink: '/Intermediate.pdf',
-  },
-  {
-    id: 3,
-    title: 'Low-Code Academy Bootcamp',
-    image: '/Lowcode.jpg',
-    downloadLink: '/Lowcode.pdf',
-  },
-  {
-    id: 4,
-    title: 'Mendix Advanced Certification',
-    image: '/Advanced.JPG',
-    downloadLink: '/Advanced.pdf',
-  },
+
+const certs = [
+  { id: 1, title: 'Mendix Rapid Developer', image: '/Rapid.jpg', pdf: '/Rapid.pdf', level: 'ENTRY', color: '#007a1f' },
+  { id: 2, title: 'Low-Code Academy Bootcamp', image: '/Lowcode.jpg', pdf: '/Lowcode.pdf', level: 'BOOTCAMP', color: '#00aaff' },
+  { id: 3, title: 'Mendix Intermediate Developer', image: '/Intermediate.jpg', pdf: '/Intermediate.pdf', level: 'MID', color: '#ffb000' },
+  { id: 4, title: 'Mendix Advanced Developer', image: '/Advanced.JPG', pdf: '/Advanced.pdf', level: 'ADVANCED', color: '#00ff41' },
 ];
 
-const Certifications = () => {
-  const [selectedCert, setSelectedCert] = useState<{ image: string; downloadLink: string } | null>(null);
-  const modalRef = useRef<HTMLDivElement | null>(null);
-
-  const handleOpenModal = (cert: { image: string; downloadLink: string }) => {
-    setSelectedCert(cert);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedCert(null);
-  };
+export default function Certifications() {
+  const [selected, setSelected] = useState<typeof certs[0] | null>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
-        handleCloseModal();
-      }
+    const handler = (e: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(e.target as Node)) setSelected(null);
     };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-gray-900 overflow-hidden">
-      <MatrixRain />
-      <div className="relative z-10 flex flex-col items-center p-6 text-gray-300 mt-12">
-        <h1 className="text-4xl font-bold mb-8 text-white text-center">Certifications</h1>
+    <div style={{ position: 'relative', minHeight: '100vh', paddingTop: '90px', paddingBottom: '40px' }}>
+      <MatrixRain opacity={0.08} />
+      <div style={{ position: 'relative', zIndex: 10, maxWidth: '860px', margin: '0 auto', padding: '20px 20px 60px' }}>
+        <div style={{ marginBottom: '8px', fontSize: '11px', color: '#00cc33' }}>nicholas@sivaji-perez:~$ ls -la certs/</div>
+        <div style={{ marginBottom: '24px', fontSize: '11px', color: '#00cc33' }}># 4 certifications — click any to view full certificate</div>
 
-        <div className={`grid gap-6 w-full max-w-6xl
-          grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
-          ${certifications.length % 3 === 1 ? 'justify-center lg:grid-cols-[repeat(auto-fill,minmax(300px,1fr))]' : ''}`}>
-          {certifications.map(cert => (
-            <div
-              key={cert.id}
-              className="cursor-pointer bg-gray-800/90 p-4 rounded-lg shadow-lg hover:shadow-xl transition"
-              onClick={() => handleOpenModal(cert)}
-            >
-              <Image
-                src={cert.image}
-                alt={cert.title}
-                className="w-full h-auto rounded-lg"
-                width={400}
-                height={500}
-              />
-              <h2 className="mt-2 text-xl font-semibold text-white text-center">{cert.title}</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1px', background: '#1a3a1a', border: '1px solid #1a3a1a' }}>
+          {certs.map(cert => (
+            <div key={cert.id} onClick={() => setSelected(cert)}
+              style={{ background: '#0d0d0d', padding: '20px', cursor: 'pointer', borderLeft: `2px solid ${cert.color}`, transition: 'background 0.15s' }}
+              onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#111'}
+              onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = '#0d0d0d'}>
+              <div style={{ fontSize: '10px', color: cert.color, letterSpacing: '0.1em', marginBottom: '8px' }}>[{cert.level}]</div>
+              <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', marginBottom: '12px', border: '1px solid #1a3a1a', overflow: 'hidden' }}>
+                <Image src={cert.image} alt={cert.title} fill style={{ objectFit: 'cover', filter: 'grayscale(20%) contrast(1.05)' }} />
+              </div>
+              <div style={{ fontSize: '14px', color: '#00dd44', fontWeight: 700, marginBottom: '4px' }}>{cert.title}</div>
+              <div style={{ fontSize: '11px', color: '#00aa33' }}>click to view · download available</div>
             </div>
           ))}
         </div>
+      </div>
 
-        {selectedCert && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
-            <div ref={modalRef} className="bg-gray-800 p-6 rounded-lg max-w-3xl w-full relative">
-              <button
-                className="absolute top-4 right-4 text-red-500 hover:text-red-700"
-                onClick={handleCloseModal}
-              >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-              </button>
-              <Image
-                src={selectedCert.image}
-                alt="Certificate"
-                width={500}
-                height={500}
-                className="w-full h-auto mb-4 rounded-lg"
-              />
-              <a
-                href={selectedCert.downloadLink}
-                download
-                className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-              >
-                Download Certificate
-              </a>
+      {selected && (
+        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.88)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 500 }}>
+          <div ref={modalRef} className="term-window" style={{ maxWidth: '640px', width: '90%' }}>
+            <div className="term-titlebar" style={{ borderLeft: `2px solid ${selected.color}` }}>
+              <span className="term-dot term-dot-red" onClick={() => setSelected(null)} style={{ cursor: 'pointer' }} />
+              <span className="term-dot term-dot-yellow" />
+              <span className="term-dot term-dot-green" />
+              <span style={{ marginLeft: 8, color: '#00cc33' }}>{selected.title}</span>
+            </div>
+            <div className="term-body">
+              <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', marginBottom: '16px', border: '1px solid #1a3a1a' }}>
+                <Image src={selected.image} alt={selected.title} fill style={{ objectFit: 'contain' }} />
+              </div>
+              <div style={{ display: 'flex', gap: '8px' }}>
+                <a href={selected.pdf} download className="term-btn" style={{ textDecoration: 'none', display: 'inline-block' }}>Download PDF</a>
+                <button onClick={() => setSelected(null)} className="term-btn">Close</button>
+              </div>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
-};
-
-export default Certifications;
+}
