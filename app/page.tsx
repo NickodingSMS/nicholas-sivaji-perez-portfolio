@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import MatrixRain from './MatrixRain';
+import TermWindow from './TermWindow';
 
 const BOOT_LINES = [
   { text: 'NSP-OS v2.0.1 (Gainesville, FL)', delay: 0, color: '#00ff41', bold: true },
@@ -53,12 +54,8 @@ export default function Home() {
     <div style={{ position: 'relative', minHeight: '100vh', paddingTop: '90px', paddingBottom: '30px' }}>
       <MatrixRain opacity={0.12} />
       <div style={{ position: 'relative', zIndex: 10, maxWidth: '860px', margin: '0 auto', padding: '20px 20px 60px' }}>
-        <div className="term-window" style={{ marginBottom: '24px' }}>
-          <div className="term-titlebar">
-            <span className="term-dot term-dot-red" /><span className="term-dot term-dot-yellow" /><span className="term-dot term-dot-green" />
-            <span style={{ marginLeft: 8 }}>bash — nicholas@sivaji-perez: ~ — 120×40</span>
-            <span style={{ marginLeft: 'auto', fontSize: '10px', padding: '1px 10px', background: '#001a00', border: '1px solid #00ff41', color: '#00ff41', fontWeight: 700, letterSpacing: '0.05em' }}>● AVAILABLE FOR HIRE</span>
-          </div>
+        <TermWindow title="bash — nicholas@sivaji-perez: ~ — 120×40" style={{ marginBottom: '24px' }}>
+
           <div className="term-body" style={{ minHeight: '300px' }}>
             {BOOT_LINES.slice(0, visibleLines).map((line, i) => (
               <div key={i} className="animate-scan-in" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '13px', color: line.color || '#007a1f', fontWeight: line.bold ? 700 : 400, minHeight: '20px', lineHeight: '1.7' }}>
@@ -76,7 +73,7 @@ export default function Home() {
               </div>
             )}
           </div>
-        </div>
+        </TermWindow>
 
         {showModules && (
           <div style={{ opacity: 0, animation: 'fadeInUp 0.4s ease 0.1s forwards' }}>

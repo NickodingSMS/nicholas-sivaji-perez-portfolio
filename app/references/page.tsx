@@ -1,5 +1,6 @@
 'use client';
 import MatrixRain from '../MatrixRain';
+import TermWindow from '../TermWindow';
 
 const refs: { name: string; role: string; email: string; phone?: string; relation: string; color: string }[] = [
   { name: 'Benjamin Hladycz', role: 'Director, Solutions Architect', email: 'benjaminhladycz@gmail.com', relation: 'Manager · Solutions Made Simple', color: '#00aaff' },
@@ -17,13 +18,8 @@ export default function References() {
         <div style={{ marginBottom: '24px', fontSize: '11px', color: '#00cc33' }}># professional references — contact directly or ask me for more</div>
 
         {refs.map((ref, i) => (
-          <div key={i} className="term-window" style={{ marginBottom: '12px' }}>
-            <div className="term-titlebar" style={{ borderLeft: `2px solid ${ref.color}` }}>
-              <span className="term-dot term-dot-red" />
-              <span className="term-dot term-dot-yellow" />
-              <span className="term-dot term-dot-green" />
-              <span style={{ marginLeft: 8, color: '#00dd44' }}>{ref.name.toLowerCase().replace(/ /g, '_')}.contact</span>
-            </div>
+          <TermWindow key={i} title={`${ref.name.toLowerCase().replace(/ /g, '_')}.contact`} borderColor={ref.color} style={{ marginBottom: '12px' }}>
+
             <div className="term-body">
               <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '8px 24px' }}>
                 {[['NAME', ref.name], ['ROLE', ref.role], ['RELATION', ref.relation], ['EMAIL', ref.email], ...(ref.phone ? [['PHONE', ref.phone]] : [])].map(([k, v]) => (
@@ -38,16 +34,11 @@ export default function References() {
                 ))}
               </div>
             </div>
-          </div>
+          </TermWindow>
         ))}
 
-        <div className="term-window">
-          <div className="term-titlebar">
-            <span className="term-dot term-dot-red" />
-            <span className="term-dot term-dot-yellow" />
-            <span className="term-dot term-dot-green" />
-            <span style={{ marginLeft: 8, color: '#00dd44' }}>superiors.txt</span>
-          </div>
+        <TermWindow title="superiors.txt">
+
           <div className="term-body">
             <div style={{ fontSize: '13px', color: '#00dd44', marginBottom: '8px' }}>
               Contact info for direct managers and clients available on request.
@@ -56,7 +47,7 @@ export default function References() {
               → nicholassivaji@gmail.com
             </a>
           </div>
-        </div>
+        </TermWindow>
       </div>
     </div>
   );

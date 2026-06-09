@@ -318,3 +318,5 @@ body::after {
   .desktop-text { display: none; }
   .mobile-text { display: inline; }
 }
+
+.term-body-collapsed { display: none; }
