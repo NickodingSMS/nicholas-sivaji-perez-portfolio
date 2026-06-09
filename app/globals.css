@@ -310,3 +310,11 @@ body::after {
   opacity: 0;
   animation: fadeInUp 0.1s ease forwards;
 }
+
+.desktop-text { display: inline; }
+.mobile-text { display: none; }
+
+@media (max-width: 768px) {
+  .desktop-text { display: none; }
+  .mobile-text { display: inline; }
+}

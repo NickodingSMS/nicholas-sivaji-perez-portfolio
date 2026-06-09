@@ -39,7 +39,7 @@ export default function TopBar() {
         onMouseLeave={e => { if (pathname !== '/hire') (e.currentTarget as HTMLElement).style.background = '#001a00'; }}
         >
           <span style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.1em', color: pathname === '/hire' ? '#000' : '#00ff41', textShadow: pathname === '/hire' ? 'none' : '0 0 10px #00ff41, 0 0 20px #00ff4166' }}>
-            ● BOOK A FREE CALL
+            <span className="desktop-text">● BOOK A FREE CALL</span><span className="mobile-text">● BOOK ME</span>
           </span>
         </Link>
 
