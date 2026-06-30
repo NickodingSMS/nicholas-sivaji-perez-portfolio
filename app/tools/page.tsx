@@ -2,11 +2,14 @@
 import Link from 'next/link';
 import MatrixRain from '../MatrixRain';
 
+const repoUrl = 'https://github.com/NickodingSMS/vulnscan-pro';
+
 const tools = [
   { cmd: './css-playground --live', href: '/tools/css-playground', label: 'css-playground', desc: 'Write CSS and see it render live. My favorite tool.', tag: 'LIVE EDITOR', color: '#00aaff', status: 'ONLINE' },
   { cmd: './json-fmt --pretty', href: '/tools/json-formatter', label: 'json-formatter', desc: 'Paste messy JSON, get it back clean and syntax-highlighted.', tag: 'UTILITY', color: '#ffb000', status: 'ONLINE' },
   { cmd: './regex-test --interactive', href: '/tools/regex-tester', label: 'regex-tester', desc: 'Write a pattern, test strings against it in real time.', tag: 'UTILITY', color: '#00ff41', status: 'ONLINE' },
   { cmd: './color-gen --palette', href: '/tools/color-palette', label: 'color-palette', desc: 'Generate color palettes. Export as CSS variables.', tag: 'DESIGN', color: '#ff69b4', status: 'ONLINE' },
+  { cmd: './vulnscan --scan', href: '/security/download', label: 'vulnscan-pro', desc: 'Browser extension vulnerability scanner. 6-phase engine, 25+ tools, real-time results. Install guide.', tag: 'SECURITY', color: '#7c3aed', status: 'ONLINE' },
 ];
 
 export default function Tools() {

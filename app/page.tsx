@@ -59,8 +59,8 @@ export default function Home() {
             {MODULES.map((mod) => {
               const isHire = mod.href === '/hire';
               return (
-                <Link key={mod.href} href={mod.href} style={{ textDecoration: 'none' }}>
-                  <div style={{ background: isHire ? '#001a00' : '#0d0d0d', padding: '20px', cursor: 'pointer', transition: 'background 0.15s', borderLeft: `2px solid ${mod.color}` }}
+                <Link key={mod.href} href={mod.href} style={{ textDecoration: 'none', display: 'flex' }}>
+                  <div style={{ background: isHire ? '#001a00' : '#0d0d0d', padding: '20px', cursor: 'pointer', transition: 'background 0.15s', borderLeft: `2px solid ${mod.color}`, flex: 1 }}
                     onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = isHire ? '#002a00' : '#111'}
                     onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = isHire ? '#001a00' : '#0d0d0d'}>
                     <div style={{ fontSize: '10px', color: mod.color, letterSpacing: '0.1em', marginBottom: '6px' }}>[{mod.tag}]{isHire && <span style={{ marginLeft: '8px', fontSize: '9px', color: '#00ff41' }}>● FREE</span>}</div>

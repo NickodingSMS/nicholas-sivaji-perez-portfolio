@@ -320,3 +320,13 @@ body::after {
 }
 
 .term-body-collapsed { display: none; }
+
+.bottom-bar {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .bottom-bar {
+    display: none !important;
+  }
+}

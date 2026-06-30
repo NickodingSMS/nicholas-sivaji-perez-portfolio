@@ -37,7 +37,7 @@ export default function RootLayout({
           </main>
         </div>
         {/* Bottom statusbar */}
-        <div style={{
+        <div className="bottom-bar" style={{
           position: 'fixed', bottom: 0, left: 0, right: 0, height: '20px',
           background: '#00ff41', display: 'flex', alignItems: 'center',
           padding: '0 12px', zIndex: 1000, fontSize: '11px', color: '#0a0a0a',
