@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "VulnScan Pro",
+  "version": "1.1.0",
+  "description": "Full vulnerability scanner UI in your browser. Scan targets, find vulnerabilities, view results — no third party sees your data.",
+  "permissions": [
+    "cookies",
+    "storage",
+    "tabs",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "http://localhost:8000/*",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; connect-src 'self' http: https: ws: wss:; script-src 'self'; object-src 'none'"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "vulnscan-pro@vulnscan.pro",
+      "strict_min_version": "112.0"
+    }
+  }
+}

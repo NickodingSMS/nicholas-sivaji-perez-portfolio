@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <title>VulnScan Pro — Results</title>
+</head>
+<body>
+  <div class="app">
+    <!-- Scan Header -->
+    <div class="scan-header" id="scanHeader">
+      <div class="scan-header-left">
+        <h1 id="scanTarget">VulnScan Pro</h1>
+        <div class="target" id="scanTargetUrl">Initializing...</div>
+      </div>
+      <div class="scan-header-right">
+        <span class="badge running" id="statusBadge"><span class="badge-dot running"></span> Running</span>
+        <button class="btn-danger" id="cancelBtn" style="display:none">Cancel</button>
+      </div>
+    </div>
+
+    <!-- Phase Timeline (visible during scan) -->
+    <div class="timeline" id="timelineSection">
+      <div class="timeline-title">Scan Progress</div>
+      <div class="timeline-phases" id="timelinePhases">
+        <div class="phase-step"><div class="phase-dot" data-step="1">1</div><div class="phase-label">Recon</div></div>
+        <div class="phase-step"><div class="phase-dot" data-step="2">2</div><div class="phase-label">Frontend</div></div>
+        <div class="phase-step"><div class="phase-dot" data-step="3">3</div><div class="phase-label">OSINT</div></div>
+        <div class="phase-step"><div class="phase-dot" data-step="4">4</div><div class="phase-label">Vuln Scan</div></div>
+        <div class="phase-step"><div class="phase-dot" data-step="5">5</div><div class="phase-label">Fuzzing</div></div>
+        <div class="phase-step"><div class="phase-dot" data-step="6">6</div><div class="phase-label">Report</div></div>
+      </div>
+    </div>
+
+    <!-- Scan Console (visible during scan) -->
+    <div class="console" id="scanConsole">
+      <div class="console-title">Scan Console</div>
+      <div id="consoleLogs"></div>
+    </div>
+
+    <!-- Grade Hero (shown when complete) -->
+    <div id="gradeHero" class="grade-hero" style="display:none">
+      <div class="grade-letter" id="gradeLetter">A</div>
+      <div class="grade-meta">
+        <div class="grade-score" id="gradeScore">100 / 100</div>
+        <div class="grade-label" id="gradeLabel">Your app looks solid</div>
+        <div class="grade-sub" id="gradeSub">0 findings</div>
+      </div>
+    </div>
+
+    <!-- Top Issues (shown when complete) -->
+    <div id="topIssuesSection" class="results-section" style="display:none">
+      <div class="results-title">Top Issues To Fix</div>
+      <div id="topIssuesList"></div>
+    </div>
+
+    <!-- Consulting CTA (shown when complete) -->
+    <div id="consultingCta" class="cta-banner" style="display:none">
+      <div class="cta-text" id="ctaText"></div>
+      <a class="cta-contact" id="ctaContact" href="#" target="_blank"></a>
+    </div>
+
+    <!-- Download Buttons -->
+    <div id="downloadSection" style="display:none;margin-bottom:20px">
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn-primary" id="downloadPdfBtn" style="width:auto;padding:10px 20px">Download PDF Report</button>
+        <a class="btn-ghost" id="reportLink" href="#" target="_blank" style="display:inline-flex;align-items:center;padding:10px 20px;text-decoration:none">View HTML Report</a>
+      </div>
+    </div>
+
+    <!-- Technical Details (collapsible) -->
+    <details id="techDetails" class="tech-details" style="display:none">
+      <summary class="tech-summary">Technical Details <span class="tech-count" id="techCount"></span></summary>
+
+      <!-- Counters -->
+      <div class="live-counters" id="resultsCounters">
+        <div class="live-stat">
+          <div class="live-stat-value" id="findingsCount">0</div>
+          <div class="live-stat-label">Findings</div>
+        </div>
+        <div class="live-stat">
+          <div class="live-stat-value" id="portsCount">0</div>
+          <div class="live-stat-label">Ports Open</div>
+        </div>
+        <div class="live-stat">
+          <div class="live-stat-value" id="toolsCount">0</div>
+          <div class="live-stat-label">Tools</div>
+        </div>
+        <div class="live-stat">
+          <div class="live-stat-value" id="subdomainsCount">0</div>
+          <div class="live-stat-label">Subdomains</div>
+        </div>
+      </div>
+
+      <!-- Severity Chart -->
+      <div class="results-section">
+        <div class="results-title">Severity Distribution</div>
+        <div class="chart-container" id="chartContainer"></div>
+      </div>
+
+      <!-- Recon Info -->
+      <div class="results-section" id="reconSection" style="display:none">
+        <div class="results-title">Reconnaissance</div>
+        <div class="recon-grid" id="reconGrid"></div>
+      </div>
+
+      <!-- All Findings Table -->
+      <div class="results-section" id="findingsSection">
+        <div class="results-title">All Findings</div>
+        <table class="findings-table" id="findingsTable">
+          <thead>
+            <tr>
+              <th style="width:80px">Severity</th>
+              <th>Finding</th>
+            </tr>
+          </thead>
+          <tbody id="findingsBody"></tbody>
+        </table>
+        <div class="empty-state" id="noFindings" style="display:none">
+          <div class="empty-state-text">No vulnerabilities found</div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
