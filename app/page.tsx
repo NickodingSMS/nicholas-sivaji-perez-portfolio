@@ -24,10 +24,10 @@ const BOOT_LINES = [
 ];
 
 const MODULES = [
-  { cmd: './services --list', href: '/services', label: 'services/', desc: 'Mendix, front end, full builds, Python automation, DevOps, IoT.', tag: 'HIRE ME', color: '#00ff41' },
+  { cmd: './services --list', href: '/services', label: 'services/', desc: 'Automation, web apps, hosting, Python, DevOps, Mendix rescue.', tag: 'HIRE ME', color: '#00ff41' },
   { cmd: './hire-me --schedule', href: '/hire', label: 'hire/', desc: 'Book a free 30-min scoping call. No commitment.', tag: 'BOOK A CALL', color: '#ffb000' },
-  { cmd: 'cat about.md', href: '/about', label: 'about/', desc: 'Self-taught dev. Video games → AP CS → production systems.', tag: 'PERSONAL', color: '#00aaff' },
-  { cmd: 'ls -la experience/', href: '/experience', label: 'experience/', desc: '5 companies. NC State, Megavue, Paradigm, SMS, S4-Digital.', tag: 'CAREER', color: '#007a1f' },
+  { cmd: 'cat about.md', href: '/about', label: 'about/', desc: 'Full-stack dev. I build, host and automate business software.', tag: 'PERSONAL', color: '#00aaff' },
+  { cmd: 'ls -la experience/', href: '/experience', label: 'experience/', desc: '6 roles. NC State, Megavue, Paradigm, SMS, S4-Digital, DineBotics.', tag: 'CAREER', color: '#007a1f' },
   { cmd: 'ls certs/', href: '/certifications', label: 'certifications/', desc: 'Mendix Advanced + Intermediate + Rapid + Low-Code Academy.', tag: 'CERTS', color: '#7c3aed' },
   { cmd: './tools --list', href: '/tools', label: 'tools/', desc: 'AI chat, CSS playground, JSON formatter, regex tester + more.', tag: 'INTERACTIVE', color: '#ff3333' },
   { cmd: 'cat references.txt', href: '/references', label: 'references/', desc: 'Past co-workers and leads who can vouch.', tag: 'CONTACTS', color: '#28c840' },

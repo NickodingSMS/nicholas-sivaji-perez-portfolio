@@ -3,16 +3,6 @@ import MatrixRain from '../MatrixRain';
 import TermWindow from '../TermWindow';
 
 const jobs = [
-  { title: 'VulnScan Pro — Browser Extension Scanner', company: 'Personal Project', dates: '2026 – Present', status: 'PASSION', url: '/security/download', stack: ['Python', 'FastAPI', 'Next.js', 'Docker', 'Nmap', 'Network Security', 'Pen Testing', 'OSINT', 'Linux', 'Bash'], color: '#7c3aed', bullets: [
-    'Built VulnScan Pro: browser extension (Chrome/Firefox) that orchestrates 25+ OSS security tools for on-demand website scanning',
-    '6-phase scanning engine: CDN bypass / origin-IP discovery, frontend JS secret analysis, OSINT, port + vuln scanning, web fuzzing, report generation',
-    'Custom CDN origin-IP discovery via certificate transparency logs (crt.sh), DNS probing, SSL cert SANs, and subdomain enumeration',
-    'Automated API key / secret detection in JavaScript bundles (AWS, Google, Firebase, Stripe, GitHub tokens, etc.)',
-    'Security scoring engine (0–100) with letter grades and plain-English fix recommendations for each finding',
-    'Manifest V3 extension with legal consent flow, audit logging, and dashboard for viewing results',
-    'Runs locally — bring your own backend (Python/FastAPI) with Docker Compose or CLI',
-    'In the process of publishing to the Chrome Web Store and Firefox Add-ons marketplace'
-  ] },
   { title: 'CTO — DineBotics', company: 'DineBotics Inc.', dates: 'Apr 2026 – Present', status: 'ACTIVE', url: 'https://dinebotics.ai', stack: ['React', 'Express.js', 'TypeScript', 'PostgreSQL', 'Drizzle', 'Docker', 'WebSocket', 'RBAC', 'Linux'], color: '#ffb000', bullets: [
     'Full-stack restaurant management platform for multi-location chains: menu, orders, inventory, reservations, staff',
     'Express.js + TypeScript backend with Drizzle ORM on PostgreSQL; React 19 + Vite + Tailwind CSS frontend',
@@ -37,7 +27,7 @@ export default function Experience() {
         <div style={{ marginBottom: '20px', fontSize: '11px', color: '#00cc33' }}>nicholas@sivaji-perez:~$ ls -la experience/</div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: '1px', background: '#1a3a1a', border: '1px solid #1a3a1a', marginBottom: '20px' }}>
-          {[['YEARS EXP','5+'],['COMPANIES','5'],['CONTRACTS','4'],['CERTS','4'],['DEGREE','N/A'],['REMOTE','100%']].map(([label, value]) => (
+          {[['YEARS EXP','5+'],['ROLES','6'],['CONTRACTS','4'],['CERTS','4'],['DEGREE','N/A'],['REMOTE','100%']].map(([label, value]) => (
             <div key={label} style={{ background: '#0d0d0d', padding: '16px', textAlign: 'center' }}>
               <div style={{ fontSize: '22px', color: '#00ff41', fontWeight: 700 }}>{value}</div>
               <div style={{ fontSize: '10px', color: '#00aa33', letterSpacing: '0.1em', marginTop: '4px' }}>{label}</div>

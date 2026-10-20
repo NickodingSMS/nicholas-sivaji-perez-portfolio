@@ -12,7 +12,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>NSP // Terminal</title>
-        <meta name="description" content="Nicholas Sivaji Perez — Software Engineer" />
+        <meta name="description" content="Nicholas Sivaji Perez — Full Stack Engineer. I build, host and automate business software." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Share+Tech+Mono&display=swap" rel="stylesheet" />

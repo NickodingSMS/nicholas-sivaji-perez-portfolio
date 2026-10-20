@@ -32,7 +32,10 @@ const sections = [
       "Built things at NC State, Megavue, Paradigm. Each one: handed a broken",
       "system, left it significantly better. Usually fast.",
       "",
-      "Currently open to full-time remote roles and freelance contracts.",
+      "Now CTO of DineBotics, building a full-stack restaurant platform with",
+      "AI agents.",
+      "",
+      "Open to full-time remote roles and freelance contracts.",
     ],
   },
   {
@@ -50,14 +53,14 @@ const sections = [
 ];
 
 const skills = [
-  { label: 'CSS / SCSS', level: 96, color: '#00aaff' },
+  { label: 'React / Next.js', level: 88, color: '#00ff41' },
   { label: 'JavaScript / TS', level: 88, color: '#00ff41' },
-  { label: 'React / Next.js', level: 85, color: '#00ff41' },
-  { label: 'Mendix', level: 94, color: '#ffb000' },
-  { label: 'Express / Node', level: 75, color: '#00ff41' },
-  { label: 'Python', level: 68, color: '#007a1f' },
-  { label: 'SQL / Prisma', level: 72, color: '#007a1f' },
-  { label: 'Linux / CLI', level: 80, color: '#00aaff' },
+  { label: 'Python', level: 80, color: '#007a1f' },
+  { label: 'Express / Node', level: 78, color: '#00ff41' },
+  { label: 'SQL / Prisma', level: 76, color: '#007a1f' },
+  { label: 'Linux / CLI', level: 82, color: '#00aaff' },
+  { label: 'CSS / SCSS', level: 96, color: '#00aaff' },
+  { label: 'Mendix', level: 92, color: '#ffb000' },
 ];
 
 export default function About() {
@@ -78,7 +81,7 @@ export default function About() {
             <div style={{ flex: 1, minWidth: '200px' }}>
               {[
                 ['NAME', 'Nicholas Sivaji Perez'],
-                ['ROLE', 'Software Engineer / Front End Specialist'],
+                ['ROLE', 'Full Stack Engineer / AI + Automation'],
                 ['LOCATION', 'Gainesville, FL (Remote)'],
                 ['EXPERIENCE', '5+ years'],
                 ['EDUCATION', 'Self-taught + Mendix Certified (Advanced)'],
