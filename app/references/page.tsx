@@ -14,8 +14,8 @@ export default function References() {
     <div style={{ position: 'relative', minHeight: '100vh', paddingTop: '90px', paddingBottom: '40px' }}>
       <MatrixRain opacity={0.08} />
       <div style={{ position: 'relative', zIndex: 10, maxWidth: '860px', margin: '0 auto', padding: '20px 20px 60px' }}>
-        <div style={{ marginBottom: '8px', fontSize: '11px', color: '#00cc33' }}>nicholas@sivaji-perez:~$ cat references.txt</div>
-        <div style={{ marginBottom: '24px', fontSize: '11px', color: '#00cc33' }}># professional references — contact directly or ask me for more</div>
+        <div style={{ marginBottom: '8px', fontSize: '11px', color: '#00ff41' }}>nicholas@sivaji-perez:~$ cat references.txt</div>
+        <div style={{ marginBottom: '24px', fontSize: '11px', color: '#00ff41' }}># professional references — contact directly or ask me for more</div>
 
         {refs.map((ref, i) => (
           <TermWindow key={i} title={`${ref.name.toLowerCase().replace(/ /g, '_')}.contact`} borderColor={ref.color} style={{ marginBottom: '12px' }}>
@@ -24,8 +24,8 @@ export default function References() {
               <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '8px 24px' }}>
                 {[['NAME', ref.name], ['ROLE', ref.role], ['RELATION', ref.relation], ['EMAIL', ref.email], ...(ref.phone ? [['PHONE', ref.phone]] : [])].map(([k, v]) => (
                   <div key={k} style={{ display: 'contents' }}>
-                    <span style={{ color: '#00aa33', fontSize: '11px', letterSpacing: '0.05em', alignSelf: 'center' }}>{k}</span>
-                    <span style={{ fontSize: '13px', color: k === 'EMAIL' && v !== 'available on request' ? '#00aaff' : '#00dd44' }}>
+                    <span style={{ color: '#00dd44', fontSize: '11px', letterSpacing: '0.05em', alignSelf: 'center' }}>{k}</span>
+                    <span style={{ fontSize: '13px', color: k === 'EMAIL' && v !== 'available on request' ? '#00aaff' : '#00ff41' }}>
                       {k === 'EMAIL' && v !== 'available on request'
                         ? <a href={`mailto:${v}`} style={{ color: '#00aaff', textDecoration: 'none' }}>{v}</a>
                         : v}
@@ -40,7 +40,7 @@ export default function References() {
         <TermWindow title="superiors.txt">
 
           <div className="term-body">
-            <div style={{ fontSize: '13px', color: '#00dd44', marginBottom: '8px' }}>
+            <div style={{ fontSize: '13px', color: '#00ff41', marginBottom: '8px' }}>
               Contact info for direct managers and clients available on request.
             </div>
             <a href="mailto:nicholassivaji@gmail.com" style={{ fontSize: '12px', color: '#00aaff', textDecoration: 'none' }}>
