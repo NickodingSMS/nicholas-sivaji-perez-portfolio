@@ -7,7 +7,7 @@
 
 :root {
   --green: #00ff41;
-  --green-dim: #00cc33;
+  --green-dim: #00ff41;
   --green-dark: #003300;
   --green-glow: rgba(0, 255, 65, 0.15);
   --amber: #ffb000;
@@ -19,8 +19,8 @@
   --border: #1a3a1a;
   --border-bright: #00ff41;
   --text: #00ff41;
-  --text-dim: #00cc33;
-  --text-muted: #00aa33;
+  --text-dim: #00ff41;
+  --text-muted: #00dd44;
   --font-mono: 'JetBrains Mono', 'Share Tech Mono', 'Courier New', monospace;
   --scanline-opacity: 0.03;
 }

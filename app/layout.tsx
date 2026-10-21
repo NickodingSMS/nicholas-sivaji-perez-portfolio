@@ -23,7 +23,7 @@ export default function RootLayout({
           position: 'fixed', top: 0, left: 0, right: 0, height: '24px',
           background: '#001a00', borderBottom: '1px solid #1a3a1a',
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          padding: '0 16px', zIndex: 1000, fontSize: '11px', color: '#007a1f',
+          padding: '0 16px', zIndex: 1000, fontSize: '11px', color: '#00dd44',
           letterSpacing: '0.05em'
         }}>
           <span style={{ color: '#00ff41', fontWeight: 700 }}>NSP-OS v2.0.1</span>

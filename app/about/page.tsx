@@ -55,9 +55,9 @@ const sections = [
 const skills = [
   { label: 'React / Next.js', level: 88, color: '#00ff41' },
   { label: 'JavaScript / TS', level: 88, color: '#00ff41' },
-  { label: 'Python', level: 80, color: '#007a1f' },
+  { label: 'Python', level: 80, color: '#00dd44' },
   { label: 'Express / Node', level: 78, color: '#00ff41' },
-  { label: 'SQL / Prisma', level: 76, color: '#007a1f' },
+  { label: 'SQL / Prisma', level: 76, color: '#00dd44' },
   { label: 'Linux / CLI', level: 82, color: '#00aaff' },
   { label: 'CSS / SCSS', level: 96, color: '#00aaff' },
   { label: 'Mendix', level: 92, color: '#ffb000' },
@@ -68,7 +68,7 @@ export default function About() {
     <div style={{ position: 'relative', minHeight: '100vh', paddingTop: '90px', paddingBottom: '40px' }}>
       <MatrixRain opacity={0.08} />
       <div style={{ position: 'relative', zIndex: 10, maxWidth: '860px', margin: '0 auto', padding: '20px 20px 60px' }}>
-        <div style={{ marginBottom: '8px', fontSize: '11px', color: '#00cc33' }}>nicholas@sivaji-perez:~$ cat about.md</div>
+        <div style={{ marginBottom: '8px', fontSize: '11px', color: '#00ff41' }}>nicholas@sivaji-perez:~$ cat about.md</div>
 
         <TermWindow title="whoami" style={{ marginBottom: '16px' }}>
           <div className="term-body" style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
@@ -88,8 +88,8 @@ export default function About() {
                 ['STATUS', 'ACTIVELY SEEKING'],
               ].map(([k, v]) => (
                 <div key={k} style={{ display: 'flex', gap: '12px', marginBottom: '4px', fontSize: '13px' }}>
-                  <span style={{ color: '#00aa33', minWidth: 90, fontSize: '11px' }}>{k}</span>
-                  <span style={{ color: k === 'STATUS' ? '#00ff41' : '#00dd44', fontWeight: k === 'STATUS' ? 700 : 400 }}>
+                  <span style={{ color: '#00dd44', minWidth: 90, fontSize: '11px' }}>{k}</span>
+                  <span style={{ color: k === 'STATUS' ? '#00ff41' : '#00ff41', fontWeight: k === 'STATUS' ? 700 : 400 }}>
                     {k === 'STATUS' ? '█ ' : ''}{v}
                   </span>
                 </div>
@@ -100,12 +100,12 @@ export default function About() {
 
         <TermWindow title="skills --proficiency" style={{ marginBottom: '16px' }}>
           <div className="term-body">
-            <div style={{ fontSize: '11px', color: '#00aa33', marginBottom: '16px' }}># self-assessed, production-verified</div>
+            <div style={{ fontSize: '11px', color: '#00dd44', marginBottom: '16px' }}># self-assessed, production-verified</div>
             {skills.map(skill => (
               <div key={skill.label} style={{ marginBottom: '10px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px', fontSize: '12px' }}>
-                  <span style={{ color: '#00dd44' }}>{skill.label}</span>
-                  <span style={{ color: '#00aa33' }}>{skill.level}%</span>
+                  <span style={{ color: '#00ff41' }}>{skill.label}</span>
+                  <span style={{ color: '#00dd44' }}>{skill.level}%</span>
                 </div>
                 <div style={{ height: '4px', background: '#0a2a0a', position: 'relative' }}>
                   <div style={{ height: '100%', width: `${skill.level}%`, background: skill.color, boxShadow: `0 0 6px ${skill.color}` }} />
@@ -120,7 +120,7 @@ export default function About() {
             <div className="term-body">
               <div style={{ borderLeft: `2px solid ${sec.color}`, paddingLeft: '16px' }}>
                 {sec.content.map((line, j) => (
-                  <div key={j} style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '13px', color: line === '' ? 'transparent' : '#00dd44', minHeight: '20px', lineHeight: '1.8' }}>
+                  <div key={j} style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '13px', color: line === '' ? 'transparent' : '#00ff41', minHeight: '20px', lineHeight: '1.8' }}>
                     {line || '​'}
                   </div>
                 ))}
