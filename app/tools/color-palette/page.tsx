@@ -86,7 +86,7 @@ export default function ColorPalette() {
     <div style={{ position: 'relative', minHeight: '100vh', paddingTop: '90px', paddingBottom: '40px' }}>
       <MatrixRain opacity={0.05} />
       <div style={{ position: 'relative', zIndex: 10, maxWidth: '860px', margin: '0 auto', padding: '20px 20px 60px' }}>
-        <div style={{ marginBottom: '16px', fontSize: '11px', color: '#004d13' }}>
+        <div style={{ marginBottom: '16px', fontSize: '11px', color: '#00dd44' }}>
           nicholas@sivaji-perez:~$ ./color-gen --palette
         </div>
 
@@ -98,7 +98,7 @@ export default function ColorPalette() {
           </div>
           <div className="term-body" style={{ display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <span style={{ fontSize: '12px', color: '#004d13' }}>base:</span>
+              <span style={{ fontSize: '12px', color: '#00dd44' }}>base:</span>
               <input
                 type="color"
                 value={baseColor}
@@ -161,9 +161,9 @@ export default function ColorPalette() {
                     )}
                   </div>
                   <div style={{ padding: '6px 2px' }}>
-                    <div style={{ fontSize: '11px', color: '#007a1f', marginBottom: '2px' }}>{color.name}</div>
+                    <div style={{ fontSize: '11px', color: '#00dd44', marginBottom: '2px' }}>{color.name}</div>
                     <div style={{ fontSize: '12px', color: '#00ff41', fontFamily: 'monospace' }}>{color.hex}</div>
-                    <div style={{ fontSize: '10px', color: '#004d13' }}>
+                    <div style={{ fontSize: '10px', color: '#00dd44' }}>
                       hsl({hexToHsl(color.hex).join(', ')})
                     </div>
                   </div>
@@ -180,7 +180,7 @@ export default function ColorPalette() {
             <span style={{ marginLeft: 8 }}>variables.css — ready to paste</span>
           </div>
           <div className="term-body">
-            <pre style={{ fontSize: '12px', color: '#007a1f', lineHeight: 1.8, margin: 0, overflowX: 'auto' }}>
+            <pre style={{ fontSize: '12px', color: '#00dd44', lineHeight: 1.8, margin: 0, overflowX: 'auto' }}>
               <span style={{ color: '#569cd6' }}>:root</span>{' {'}{'\n'}
               {palette.map(c => (
                 <span key={c.name} style={{ display: 'block' }}>

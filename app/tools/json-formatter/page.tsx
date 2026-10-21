@@ -57,7 +57,7 @@ export default function JSONFormatter() {
     <div style={{ position: 'relative', minHeight: '100vh', paddingTop: '90px', paddingBottom: '40px' }}>
       <MatrixRain opacity={0.05} />
       <div style={{ position: 'relative', zIndex: 10, maxWidth: '1100px', margin: '0 auto', padding: '20px 20px 60px' }}>
-        <div style={{ marginBottom: '16px', fontSize: '11px', color: '#004d13' }}>
+        <div style={{ marginBottom: '16px', fontSize: '11px', color: '#00dd44' }}>
           nicholas@sivaji-perez:~$ ./json-fmt --pretty
         </div>
 
@@ -68,7 +68,7 @@ export default function JSONFormatter() {
           <button onClick={copy} className="term-btn" disabled={!output}>Copy Output</button>
           <button onClick={() => { setInput(''); setOutput(''); setError(''); setStats(null); }} className="term-btn">Clear</button>
           {stats && (
-            <span style={{ fontSize: '11px', color: '#004d13', alignSelf: 'center', marginLeft: '8px' }}>
+            <span style={{ fontSize: '11px', color: '#00dd44', alignSelf: 'center', marginLeft: '8px' }}>
               {stats.keys} keys · {stats.size}
             </span>
           )}
@@ -114,7 +114,7 @@ export default function JSONFormatter() {
               ) : output ? (
                 <pre style={{ margin: 0 }} dangerouslySetInnerHTML={{ __html: syntaxHighlight(output) }} />
               ) : (
-                <div style={{ color: '#004d13' }}>// formatted output will appear here</div>
+                <div style={{ color: '#00dd44' }}>// formatted output will appear here</div>
               )}
             </div>
           </div>

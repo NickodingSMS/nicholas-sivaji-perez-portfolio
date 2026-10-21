@@ -5,7 +5,7 @@ import MatrixRain from '../../MatrixRain';
 
 const PRESETS = [
   { label: 'Email', pattern: '[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}' },
-  { label: 'URL', pattern: 'https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&\\/\\/=]*)' },
+  { label: 'URL', pattern: 'https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&\\/\\=]*)' },
   { label: 'Phone US', pattern: '\\(?(\\d{3})\\)?[-.\\s]?(\\d{3})[-.\\s]?(\\d{4})' },
   { label: 'Hex Color', pattern: '#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})' },
   { label: 'IP Address', pattern: '\\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b' },
@@ -28,12 +28,12 @@ export function RegexTester() {
   }, [pattern, flags, testStr]);
 
   const highlighted = result?.highlighted?.split('\x00').map((part, i) => {
-    if (i === 0) return <span key={i} style={{ color: '#007a1f' }}>{part}</span>;
+    if (i === 0) return <span key={i} style={{ color: '#00dd44' }}>{part}</span>;
     const [match, rest] = part.split('\x01');
     return (
       <span key={i}>
         <span style={{ background: '#00ff4133', color: '#00ff41', borderBottom: '2px solid #00ff41' }}>{match}</span>
-        <span style={{ color: '#007a1f' }}>{rest}</span>
+        <span style={{ color: '#00dd44' }}>{rest}</span>
       </span>
     );
   });
@@ -42,7 +42,7 @@ export function RegexTester() {
     <div style={{ position: 'relative', minHeight: '100vh', paddingTop: '90px', paddingBottom: '40px' }}>
       <MatrixRain opacity={0.05} />
       <div style={{ position: 'relative', zIndex: 10, maxWidth: '860px', margin: '0 auto', padding: '20px 20px 60px' }}>
-        <div style={{ marginBottom: '16px', fontSize: '11px', color: '#004d13' }}>
+        <div style={{ marginBottom: '16px', fontSize: '11px', color: '#00dd44' }}>
           nicholas@sivaji-perez:~$ ./regex-test --interactive
         </div>
 
@@ -59,7 +59,7 @@ export function RegexTester() {
           </div>
           <div className="term-body">
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-              <span style={{ color: '#007a1f', fontSize: '18px' }}>/</span>
+              <span style={{ color: '#00dd44', fontSize: '18px' }}>/</span>
               <input
                 value={pattern}
                 onChange={e => setPattern(e.target.value)}
@@ -68,7 +68,7 @@ export function RegexTester() {
                 spellCheck={false}
                 style={{ fontSize: '15px' }}
               />
-              <span style={{ color: '#007a1f', fontSize: '18px' }}>/</span>
+              <span style={{ color: '#00dd44', fontSize: '18px' }}>/</span>
               <input
                 value={flags}
                 onChange={e => setFlags(e.target.value)}
@@ -81,7 +81,7 @@ export function RegexTester() {
 
             {/* Presets */}
             <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-              <span style={{ fontSize: '11px', color: '#004d13', alignSelf: 'center' }}>presets:</span>
+              <span style={{ fontSize: '11px', color: '#00dd44', alignSelf: 'center' }}>presets:</span>
               {PRESETS.map(p => (
                 <button key={p.label} onClick={() => setPattern(p.pattern)} className="term-btn" style={{ fontSize: '10px', padding: '3px 10px' }}>
                   {p.label}
@@ -126,12 +126,12 @@ export function RegexTester() {
               </div>
               {result.matches.length > 0 && (
                 <div>
-                  <div style={{ fontSize: '11px', color: '#004d13', marginBottom: '8px' }}># match list</div>
+                  <div style={{ fontSize: '11px', color: '#00dd44', marginBottom: '8px' }}># match list</div>
                   {result.matches.slice(0, 20).map((m, i) => (
-                    <div key={i} style={{ fontSize: '12px', color: '#007a1f', marginBottom: '4px' }}>
-                      <span style={{ color: '#004d13' }}>[{i}]</span>
+                    <div key={i} style={{ fontSize: '12px', color: '#00dd44', marginBottom: '4px' }}>
+                      <span style={{ color: '#00dd44' }}>[{i}]</span>
                       <span style={{ color: '#00ff41', marginLeft: '12px' }}>&quot;{m[0]}&quot;</span>
-                      <span style={{ color: '#004d13', marginLeft: '8px' }}>index: {m.index}</span>
+                      <span style={{ color: '#00dd44', marginLeft: '8px' }}>index: {m.index}</span>
                     </div>
                   ))}
                 </div>

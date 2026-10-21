@@ -61,7 +61,7 @@ export default function CSSPlayground() {
     <div style={{ position: 'relative', minHeight: '100vh', paddingTop: '90px', paddingBottom: '40px' }}>
       <MatrixRain opacity={0.05} />
       <div style={{ position: 'relative', zIndex: 10, maxWidth: '1100px', margin: '0 auto', padding: '20px 20px 60px' }}>
-        <div style={{ marginBottom: '16px', fontSize: '11px', color: '#004d13' }}>
+        <div style={{ marginBottom: '16px', fontSize: '11px', color: '#00dd44' }}>
           nicholas@sivaji-perez:~$ ./css-playground --live
         </div>
 
@@ -75,7 +75,7 @@ export default function CSSPlayground() {
               {(['html', 'css'] as const).map(tab => (
                 <button key={tab} onClick={() => setActivePane(tab)} style={{
                   background: activePane === tab ? '#00ff41' : 'transparent',
-                  color: activePane === tab ? '#0a0a0a' : '#007a1f',
+                  color: activePane === tab ? '#0a0a0a' : '#00dd44',
                   border: 'none', fontFamily: "'JetBrains Mono', monospace",
                   fontSize: '11px', padding: '0 14px', cursor: 'pointer',
                   marginLeft: tab === 'html' ? 8 : 0, height: '100%',
