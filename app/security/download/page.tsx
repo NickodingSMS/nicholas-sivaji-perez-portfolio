@@ -45,10 +45,10 @@ const steps = [
     lines: [
       'The extension needs the VulnScan Pro API server running on your machine.',
       '',
-      `<span style="color:#007a1f"># Clone from GitHub:</span>`,
+      `<span style="color:#00dd44"># Clone from GitHub:</span>`,
       `<a href="https://github.com/NickodingSMS/vulnscan-pro" target="_blank" style="color:#00ff41;font-weight:700">https://github.com/NickodingSMS/vulnscan-pro</a>`,
       '',
-      '<span style="color:#007a1f"># Install dependencies and start:</span>',
+      '<span style="color:#00dd44"># Install dependencies and start:</span>',
       'git clone https://github.com/NickodingSMS/vulnscan-pro.git',
       'cd vulnscan-pro/backend',
       'pip install -r requirements.txt',
@@ -58,8 +58,8 @@ const steps = [
       'Enter that URL in the extension popup under "Server URL".',
       '',
       'Requires: <span style="color:#00ff41">nmap</span>, <span style="color:#00ff41">nikto</span>, <span style="color:#00ff41">nuclei</span>, <span style="color:#00ff41">whatweb</span>',
-      'Debian/Ubuntu: <span style="color:#007a1f">apt install nmap nikto whatweb</span>',
-      'Nuclei: <span style="color:#007a1f">go install github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest</span>',
+      'Debian/Ubuntu: <span style="color:#00dd44">apt install nmap nikto whatweb</span>',
+      'Nuclei: <span style="color:#00dd44">go install github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest</span>',
     ],
   },
   {
@@ -83,12 +83,12 @@ export default function SecurityDownload() {
     <div style={{ position: 'relative', minHeight: '100vh', paddingTop: '90px', paddingBottom: '40px' }}>
       <MatrixRain opacity={0.08} />
       <div style={{ position: 'relative', zIndex: 10, maxWidth: '860px', margin: '0 auto', padding: '20px 20px 60px' }}>
-        <div style={{ marginBottom: '8px', fontSize: '11px', color: '#004d13' }}>nicholas@sivaji-perez:~$ ./vulnscan --install-guide</div>
-        <div style={{ marginBottom: '24px', fontSize: '11px', color: '#004d13' }}># VulnScan Pro — browser extension installation</div>
+        <div style={{ marginBottom: '8px', fontSize: '11px', color: '#00dd44' }}>nicholas@sivaji-perez:~$ ./vulnscan --install-guide</div>
+        <div style={{ marginBottom: '24px', fontSize: '11px', color: '#00dd44' }}># VulnScan Pro — browser extension installation</div>
 
         <TermWindow title="manifest.json" borderColor="#7c3aed" style={{ marginBottom: '24px' }}>
           <div className="term-body" style={{ fontSize: '12px', lineHeight: '1.8' }}>
-            <div style={{ color: '#007a1f', marginBottom: '12px' }}>
+            <div style={{ color: '#00dd44', marginBottom: '12px' }}>
               <span style={{ color: '#7c3aed' }}>name:</span> VulnScan Pro<br />
               <span style={{ color: '#7c3aed' }}>version:</span> 1.1.0<br />
               <span style={{ color: '#7c3aed' }}>description:</span> Full vulnerability scanner UI in your browser<br />
@@ -105,7 +105,7 @@ export default function SecurityDownload() {
 
         {steps.map((step, i) => (
           <TermWindow key={i} title={`${i + 1}. ${step.title}`} borderColor={step.color} style={{ marginBottom: '12px' }}>
-            <div className="term-body" style={{ fontSize: '13px', lineHeight: '1.8', color: '#00dd44' }}>
+            <div className="term-body" style={{ fontSize: '13px', lineHeight: '1.8', color: '#00ff41' }}>
               {step.lines.map((line, j) => (
                 <div key={j} style={{ minHeight: '20px' }} dangerouslySetInnerHTML={{ __html: line || '&zwnj;' }} />
               ))}
@@ -113,8 +113,8 @@ export default function SecurityDownload() {
           </TermWindow>
         ))}
 
-        <TermWindow title="— tips" borderColor="#007a1f" style={{ marginTop: '24px' }}>
-          <div className="term-body" style={{ fontSize: '12px', lineHeight: '1.8', color: '#00dd44' }}>
+        <TermWindow title="— tips" borderColor="#00dd44" style={{ marginTop: '24px' }}>
+          <div className="term-body" style={{ fontSize: '12px', lineHeight: '1.8', color: '#00ff41' }}>
             <div>▸ The backend requires <span style={{ color: '#00ff41' }}>nmap</span>, <span style={{ color: '#00ff41' }}>nikto</span>, <span style={{ color: '#00ff41' }}>nuclei</span>, and other tools — Docker handles these automatically.</div>
             <div>▸ Running locally means <span style={{ color: '#00ff41' }}>no third party</span> ever sees your scan data.</div>
             <div>▸ All scan requests are audit-logged with timestamps and IPs.</div>
